@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  This needs to have a card for each of the bet types:
+        - Straight up (1 number, 35:1)
+        - Split (2 numbers, 17:1)
+        - Corner (4 numbers, 8:1)
+        - Street (3 numbers, 11:1)
+        - Double Street (Line) (6 numbers, 5:1)
+        - Basket (5 numbers, 6:1)
+-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/btn_roucalc_bet_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_up" />
+
+        <ImageButton
+            android:id="@+id/btn_roucalc_bet_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_roucalc_bet_up"
+            app:srcCompat="@drawable/ic_arrow_down" />
+
+        <TextView
+            android:id="@+id/tv_roucalc_bet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toStartOf="@id/btn_roucalc_bet_up"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Straight Up" />
+
+        <EditText
+            android:id="@+id/et_roucalc_bet_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="number"
+            app:layout_constraintEnd_toStartOf="@id/btn_roucalc_bet_up"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_roucalc_bet_name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

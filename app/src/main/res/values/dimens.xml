@@ -1,0 +1,15 @@
+<resources>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="grid_margin">1dp</dimen>
+    <dimen name="text_size">18sp</dimen>
+    <dimen name="new_game_side_margin">16dp</dimen>
+    <dimen name="new_game_tv_et_gap">4dp</dimen>
+    <dimen name="new_game_entry_fields_gap">16dp</dimen>
+    <dimen name="new_game_text_size">16sp</dimen>
+    <dimen name="carnival_title_size">48sp</dimen>
+    <dimen name="carnival_text_size">16sp</dimen>
+    <dimen name="game_tf_gap">16dp</dimen>
+
+
+    <dimen name="section_text_size">30sp</dimen>
+</resources>

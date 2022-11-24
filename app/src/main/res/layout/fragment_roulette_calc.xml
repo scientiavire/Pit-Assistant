@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_roucalc_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recycler_view_roucalc_bets"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--        app:spanCount="2"-->
+<!--        tools:listitem="@layout/item_roulette_bet_cardview" />-->
+
+    <TextView
+        android:id="@+id/tv_roucalc_payout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Payout"
+        android:textSize="@dimen/section_text_size"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/title"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/new_game_entry_fields_gap"
+        />
+
+    <Button
+        android:id="@+id/btn_roucalc_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/new_game_entry_fields_gap"
+        />
+
+</LinearLayout>

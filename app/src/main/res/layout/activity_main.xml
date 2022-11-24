@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textview_count"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textColor="@color/table_header_text"
+        android:textSize="@dimen/section_text_size"
+        app:layout_constraintBottom_toTopOf="@id/frame_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Count: 0"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/frame_content"
+        android:name="com.scientiavitae.pitassistant.EightDeckFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_count" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/navbar_background"
+        app:itemTextColor="@color/table_header_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav" />
+
+
+    <!--        android:background="@color/navbar_background"-->
+    <!--        app:itemTextColor="@color/table_header_text"-->
+    <!--        app:itemIconTint="@color/table_header_text"-->
+    <!--        app:itemActiveIndicatorStyle="@color/table_hit"-->
+    <!--        app:itemTextAppearanceActive="@color/table_hit"-->
+
+    <!--        />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

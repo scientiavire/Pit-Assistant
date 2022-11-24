@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--  General Theme colors  -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#FF555555</color>
+    <color name="dark_gray">#FF222222</color>
+    <color name="dark_blue">#FF0000AA</color>
+    <color name="light_gray">#FFAAAAAA</color>
+
+<!--  Table (chart) colors  -->
+    <color name="table_surrender">#FFAAAAAA</color>
+    <color name="table_hit">#FF6666FF</color>
+    <color name="table_double_hit">#FF00CC00</color>
+    <color name="table_double_stand">#FF00AA00</color>
+    <color name="table_stand">#FFAA0000</color>
+    <color name="table_background">#FF222222</color>
+    <color name="table_split">#FFCCCC00</color>
+    <color name="table_header_text">#FF999999</color>
+
+<!--  Element colors  -->
+    <color name="app_background">#FF222222</color>
+    <color name="navbar_background">#FF000000</color>
+    <color name="new_game_et_background">#FF555555</color>
+    <color name="new_game_et_text">#FFFFFFFF</color>
+    <color name="standard_text">#FFBBBBBB</color>
+    <color name="title">#FFFF5555</color>
+
+
+
+</resources>

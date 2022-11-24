@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_game_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:fontFamily="sans-serif-black"
+            android:text="Game Title"
+            android:textAlignment="center"
+            android:textColor="@color/title"
+            android:textSize="@dimen/carnival_title_size" />
+
+        <TextView
+            android:id="@+id/tv_game_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:fontFamily="sans-serif-light"
+            android:text="This is a game where you make some bets and win some money, and also lose some money. Typically a lot more than you win. Always remember: In the end, the house always wins."
+            android:textAlignment="center"
+            android:textColor="@color/standard_text"
+            android:textSize="@dimen/carnival_text_size" />
+
+        <TextView
+            android:id="@+id/tv_game_main_paytable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:fontFamily="sans-serif-light"
+            android:text="Main Pay Table\nNothing ... Lose\nPair ... 1:1\nTwo Pair ... 2:1\nThree of a Kind ... 3:1"
+            android:textAlignment="center"
+            android:textColor="@color/standard_text"
+            android:textSize="@dimen/carnival_text_size" />
+
+        <View
+            android:id="@+id/game_paytable1_divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:layout_marginEnd="48dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/tv_game_side_paytable1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:fontFamily="sans-serif-light"
+            android:text="Side Bet Paytable 1\nNothing ... Lose\nPair ... 1:1\nTwo Pair ... 2:1\nThree of a Kind ... 3:1"
+            android:textAlignment="center"
+            android:textColor="@color/standard_text"
+            android:textSize="@dimen/carnival_text_size" />
+
+        <View
+            android:id="@+id/game_paytable2_divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:layout_marginEnd="48dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/tv_game_side_paytable2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:fontFamily="sans-serif-light"
+            android:text="Side Bet Paytable 2\nNothing ... Lose\nPair ... 1:1\nTwo Pair ... 2:1\nThree of a Kind ... 3:1"
+            android:textAlignment="center"
+            android:textColor="@color/standard_text"
+            android:textSize="@dimen/carnival_text_size" />
+
+        <View
+            android:id="@+id/game_paytable3_divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:layout_marginEnd="48dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/tv_game_side_paytable3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:fontFamily="sans-serif-light"
+            android:text="Side Bet Paytable 3\nNothing ... Lose\nPair ... 1:1\nTwo Pair ... 2:1\nThree of a Kind ... 3:1"
+            android:textAlignment="center"
+            android:textColor="@color/standard_text"
+            android:textSize="@dimen/carnival_text_size" />
+
+        <View
+            android:id="@+id/game_strategy_divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:layout_marginEnd="48dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/tv_game_strategy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tf_gap"
+            android:layout_marginBottom="48dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Optimum Strategy is as follows:\n1. Go all-in with any Ace, or JJ+\n2. Shove with QTs or better\n3. Call with other pairs, 78s+\n4. Fold everything else, it's junk and will never hit."
+            android:textAlignment="center"
+            android:textColor="@color/standard_text"
+            android:textSize="@dimen/carnival_text_size" />
+
+
+    </LinearLayout>
+</ScrollView>

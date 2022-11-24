@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    tools:context=".NewGameFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_new_game_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_side_margin"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:fontFamily="sans-serif-black"
+            android:text="Please enter the new game info here:"
+            android:textColor="@color/title"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/tv_new_game_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_entry_fields_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:fontFamily="sans-serif"
+            android:text="Name of the new game:"
+            android:textColor="@color/title"
+            android:textSize="@dimen/new_game_text_size" />
+
+        <EditText
+            android:id="@+id/et_new_game_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_tv_et_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:background="@color/new_game_et_background"
+            android:hint="Game Name"
+            android:textColor="@color/new_game_et_text" />
+
+
+        <TextView
+            android:id="@+id/tv_new_game_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_entry_fields_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:fontFamily="sans-serif"
+            android:text="Description of the new game:"
+            android:textColor="@color/title"
+            android:textSize="@dimen/new_game_text_size" />
+
+        <EditText
+            android:id="@+id/et_new_game_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_tv_et_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:background="@color/new_game_et_background"
+            android:hint="Game Description"
+            android:inputType="textMultiLine"
+            android:textColor="@color/new_game_et_text" />
+
+
+        <TextView
+            android:id="@+id/tv_new_game_main_paytable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_entry_fields_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:fontFamily="sans-serif"
+            android:text="Pay Table for the Main Bet:"
+            android:textColor="@color/title"
+            android:textSize="@dimen/new_game_text_size" />
+
+        <EditText
+            android:id="@+id/et_new_game_main_paytable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_tv_et_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:background="@color/new_game_et_background"
+            android:hint="Main Pay Table"
+            android:inputType="textMultiLine"
+            android:textColor="@color/new_game_et_text" />
+
+
+        <TextView
+            android:id="@+id/tv_new_game_side_paytable1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_entry_fields_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:fontFamily="sans-serif"
+            android:text="Side Bet 1 Pay Table (If none, leave blank):"
+            android:textColor="@color/title"
+            android:textSize="@dimen/new_game_text_size" />
+
+        <EditText
+            android:id="@+id/et_new_game_side_paytable1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_tv_et_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:background="@color/new_game_et_background"
+            android:hint="Side Bet 1 Pay Table"
+            android:inputType="textMultiLine"
+            android:textColor="@color/new_game_et_text" />
+
+
+        <TextView
+            android:id="@+id/tv_new_game_side_paytable2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_entry_fields_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:fontFamily="sans-serif"
+            android:text="Side Bet 2 Pay Table (If none, leave blank):"
+            android:textColor="@color/title"
+            android:textSize="@dimen/new_game_text_size" />
+
+        <EditText
+            android:id="@+id/et_new_game_side_paytable2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_tv_et_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:background="@color/new_game_et_background"
+            android:hint="Side Bet 2 Pay Table"
+            android:inputType="textMultiLine"
+            android:textColor="@color/new_game_et_text" />
+
+
+        <TextView
+            android:id="@+id/tv_new_game_side_paytable3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_entry_fields_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:fontFamily="sans-serif"
+            android:text="Side Bet 3 Pay Table (If none, leave blank):"
+            android:textColor="@color/title"
+            android:textSize="@dimen/new_game_text_size" />
+
+        <EditText
+            android:id="@+id/et_new_game_side_paytable3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_tv_et_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:background="@color/new_game_et_background"
+            android:hint="Side Bet 3 Pay Table"
+            android:inputType="textMultiLine"
+            android:textColor="@color/new_game_et_text" />
+
+
+        <TextView
+            android:id="@+id/tv_new_game_strategy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_entry_fields_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:fontFamily="sans-serif"
+            android:text="Optimum strategy of the new game:"
+            android:textColor="@color/title"
+            android:textSize="@dimen/new_game_text_size" />
+
+        <EditText
+            android:id="@+id/et_new_game_strategy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/new_game_side_margin"
+            android:layout_marginTop="@dimen/new_game_tv_et_gap"
+            android:layout_marginEnd="@dimen/new_game_side_margin"
+            android:background="@color/new_game_et_background"
+            android:hint="Optimum Strategy"
+            android:inputType="textMultiLine"
+            android:textColor="@color/new_game_et_text" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:text="Create Game"
+            />
+
+
+
+    </LinearLayout>
+</ScrollView>

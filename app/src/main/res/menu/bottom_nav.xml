@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_calculator"
+        android:title="Calculator"
+        android:icon="@drawable/ic_calculate" />
+
+    <item
+        android:id="@+id/nav_two_deck"
+        android:title="2 Deck"
+        android:icon="@drawable/ic_2_deck" />
+
+    <item
+        android:id="@+id/nav_eight_deck"
+        android:title="8 Deck"
+        android:icon="@drawable/ic_8_deck" />
+    <item
+        android:id="@+id/nav_freebet"
+        android:title="Freebet"
+        android:icon="@drawable/ic_freebet" />
+
+    <item
+        android:id="@+id/nav_carnival"
+        android:title="Carnival"
+        android:icon="@drawable/ic_ferris_wheel" />
+
+<!--    <item-->
+<!--        android:id="@+id/nav_new_game"-->
+<!--        android:title="Add Game"-->
+<!--        android:icon="@drawable/ic_add_circle" />-->
+
+
+</menu>
