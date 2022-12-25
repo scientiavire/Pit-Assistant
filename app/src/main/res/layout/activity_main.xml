@@ -7,19 +7,19 @@
     android:background="@color/app_background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textview_count"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:textColor="@color/table_header_text"
-        android:textSize="@dimen/section_text_size"
-        app:layout_constraintBottom_toTopOf="@id/frame_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Count: 0"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
+<!--    <TextView-->
+<!--        android:id="@+id/textview_count"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:gravity="center"-->
+<!--        android:textColor="@color/table_header_text"-->
+<!--        android:textSize="@dimen/section_text_size"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/frame_content"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:text="Count: 0"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>-->
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frame_content"
@@ -29,7 +29,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_count" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_freebet" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
@@ -39,7 +40,6 @@
         app:itemTextColor="@color/table_header_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav" />
 
