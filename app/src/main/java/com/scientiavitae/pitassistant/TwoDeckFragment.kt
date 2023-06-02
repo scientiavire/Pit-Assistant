@@ -107,59 +107,61 @@ class TwoDeckFragment : Fragment() {
             }
             val countDirection = intent.getStringExtra("COUNT_DIRECTION")
             Log.d("Broadcast", "Broadcast received: " + countDirection + " received.")
+
             when (countDirection) {
                 "UP" -> currentCount++
                 "DOWN" -> currentCount--
                 "RESET", null -> currentCount = 0
             }
             binding.buttonCount.text = "Count: " + currentCount
+            updateChart(countDirection)
+
         }
     }
 
 
     private fun buildChart(): MutableList<MutableList<String>> {
-        //var headers = mutableListOf( "Your\nCards", "2", "3", "4", "5", "6", "7", "8", "9", "T", "A" )
-        var chart = mutableListOf(
-            // Hard Totals
-            mutableListOf("Hard", "2", "3", "4", "5", "6", "7", "8", "9", "10", "A"),
-            mutableListOf("5-8", "H", "H", "H", "H", "H", "H", "H", "H", "H", "H"),
-            mutableListOf("9", "Dh", "Dh", "Dh", "Dh", "Dh", "H", "H", "H", "H", "H"),
-            mutableListOf("10", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "H", "H"),
-            mutableListOf("11", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh"),
-            mutableListOf("12", "H", "H", "X", "X", "X", "H", "H", "H", "H", "H"),
-            mutableListOf("13", "X", "X", "X", "X", "X", "H", "H", "H", "H", "H"),
-            mutableListOf("14", "X", "X", "X", "X", "X", "H", "H", "H", "H", "H"),
-            mutableListOf("15", "X", "X", "X", "X", "X", "H", "H", "H", "Rh", "Rh"),
-            mutableListOf("16", "X", "X", "X", "X", "X", "H", "H", "H", "Rh", "Rh"),
-            mutableListOf("17", "X", "X", "X", "X", "X", "X", "X", "X", "X", "Rs"),
-            mutableListOf("18+", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"),
+        val colHeaders = listOf( "2", "3", "4", "5", "6", "7", "8", "9", "T", "A" )
+        val rowHeadersHard = listOf("Hard", "5-8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18+")
+        val rowHeadersSoft = listOf("Soft", "13", "14", "15", "16", "17", "18", "19", "20+")
+        val rowHeadersPairs = listOf("Pair", "2-2", "3-3", "4-4", "5-5", "6-6", "7-7", "8-8", "9-9", "T-T", "A-A")
 
-            // Soft Totals
-            mutableListOf(""),
-            mutableListOf("Soft", "2", "3", "4", "5", "6", "7", "8", "9", "10", "A"),
-            mutableListOf("13", "H", "H", "H", "Dh", "Dh", "H", "H", "H", "H", "H"),
-            mutableListOf("14", "H", "H", "Dh", "Dh", "Dh", "H", "H", "H", "H", "H"),
-            mutableListOf("15", "H", "H", "Dh", "Dh", "Dh", "H", "H", "H", "H", "H"),
-            mutableListOf("16", "H", "H", "Dh", "Dh", "Dh", "H", "H", "H", "H", "H"),
-            mutableListOf("17", "H", "Dh", "Dh", "Dh", "Dh", "H", "H", "H", "H", "H"),
-            mutableListOf("18", "Ds", "Ds", "Ds", "Ds", "Ds", "X", "X", "H", "H", "H"),
-            mutableListOf("19", "X", "X", "X", "X", "Ds", "X", "X", "X", "X", "X"),
-            mutableListOf("20+", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"),
+        var chartHard = mutableListOf(
+            mutableListOf("H",  "H",  "H",  "H",  "H",  "H",  "H",  "H",  "H",  "H"), // 5-8
+            mutableListOf("Dh", "Dh", "Dh", "Dh", "Dh", "H",  "H",  "H",  "H",  "H"), // 9
+            mutableListOf("Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "H",  "H"), // 10
+            mutableListOf("Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh"), // 11
+            mutableListOf("H", "H", "S", "S", "S", "H", "H", "H", "H", "H"), // 12
+            mutableListOf("S", "S", "S", "S", "S", "H", "H", "H", "H", "H"), // 13
+            mutableListOf("S", "S", "S", "S", "S", "H", "H", "H", "H", "H"), // 14
+            mutableListOf("S", "S", "S", "S", "S", "H", "H", "H", "Rh", "Rh"), // 15
+            mutableListOf("S", "S", "S", "S", "S", "H", "H", "H", "Rh", "Rh"), // 16
+            mutableListOf("S", "S", "S", "S", "S", "S", "S", "S", "S", "Rs"), // 17
+            mutableListOf("S", "S", "S", "S", "S", "S", "S", "S", "S", "S")) // 18+
 
-            // Pairs
-            mutableListOf(""),
-            mutableListOf("Pair", "2", "3", "4", "5", "6", "7", "8", "9", "10", "A"),
-            mutableListOf("2-2", "S", "S", "S", "S", "S", "S", "H", "H", "H", "H"),
-            mutableListOf("3-3", "S", "S", "S", "S", "S", "S", "H", "H", "H", "H"),
-            mutableListOf("4-4", "H", "H", "H", "S", "S", "H", "H", "H", "H", "H"),
-            mutableListOf("5-5", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "H", "H"),
-            mutableListOf("6-6", "S", "S", "S", "S", "S", "S", "H", "H", "H", "H"),
-            mutableListOf("7-7", "S", "S", "S", "S", "S", "S", "S", "H", "H", "H"),
-            mutableListOf("8-8", "S", "S", "S", "S", "S", "S", "S", "S", "S", "Rp"),
-            mutableListOf("9-9", "S", "S", "S", "S", "S", "X", "S", "S", "X", "X"),
-            mutableListOf("T-T", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"),
-            mutableListOf("A-A", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S")
-        )
+        var chartSoft = mutableListOf(
+            mutableListOf("H", "H", "H", "Dh", "Dh", "H", "H", "H", "H", "H"), // 13
+            mutableListOf("H", "H", "Dh", "Dh", "Dh", "H", "H", "H", "H", "H"), // 14
+            mutableListOf("H", "H", "Dh", "Dh", "Dh", "H", "H", "H", "H", "H"), //15
+            mutableListOf("H", "H", "Dh", "Dh", "Dh", "H", "H", "H", "H", "H"), //16
+            mutableListOf("H", "Dh", "Dh", "Dh", "Dh", "H", "H", "H", "H", "H"), //17
+            mutableListOf("Ds", "Ds", "Ds", "Ds", "Ds", "S", "S", "H", "H", "H"), //18
+            mutableListOf("S", "S", "S", "S", "Ds", "S", "S", "S", "S", "S"), //19
+            mutableListOf("S", "S", "S", "S", "S", "S", "S", "S", "S", "S")) //20+
+
+        var chartPairs = mutableListOf(
+            mutableListOf("P", "P", "P", "P", "P", "P", "H", "H", "H", "H"), // 2-2
+            mutableListOf("P", "P", "P", "P", "P", "P", "H", "H", "H", "H"), // 3-3
+            mutableListOf("H", "H", "H", "P", "P", "H", "H", "H", "H", "H"), // 4-4
+            mutableListOf("Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "Dh", "H", "H"), // 5-5
+            mutableListOf("P", "P", "P", "P", "P", "P", "H", "H", "H", "H"), // 6-6
+            mutableListOf("P", "P", "P", "P", "P", "P", "P", "H", "H", "H"), // 7-7
+            mutableListOf("P", "P", "P", "P", "P", "P", "P", "P", "P", "Rp"), // 8-8
+            mutableListOf("P", "P", "P", "P", "P", "S", "P", "P", "S", "S"), // 9-9
+            mutableListOf("S", "S", "S", "S", "S", "S", "S", "S", "S", "S"), // T-T
+            mutableListOf("P", "P", "P", "P", "P", "P", "P", "P", "P", "P")) // A-A
+
+        var chart = mutableListOf(rowHeadersHard[1],colHeaders)
 
         return chart
     }
@@ -198,6 +200,140 @@ class TwoDeckFragment : Fragment() {
     * */
 
 
+    private fun updateChart(direction: String?) {
+
+        when (direction) {
+            "RESET", null -> {
+                resetChart()
+                return
+            }
+        }
+        when (currentCount) {
+            -3 -> {
+                when (direction) {
+                    "DOWN" -> {
+                        updateCell("H13","3","H")
+                        updateCell("H12", "5", "H")
+                    }
+                }
+            }
+
+            -2 -> {
+                when (direction) {
+                    "UP" -> {
+                        updateCell("H13", "3", "S")
+                        updateCell("H12", "5", "S")
+                    }
+                    "DOWN" -> {
+                        updateCell("H13", "2", "H")
+                        updateCell("H12", "6", "H")
+                        updateCell("H15", "A", "H")
+                    }
+                }
+            }
+
+            -1 -> {
+                when (direction) {
+                    "UP" -> {
+                        updateCell("H13", "2", "S")
+                        updateCell("H12", "6", "S")
+                        updateCell("H15", "A", "Rh")
+                    }
+                    "DOWN" -> {
+                        updateCell("H16", "T", "H")
+                        updateCell("H12", "4", "H")
+                        updateCell("H15", "T", "H")
+                    }
+                }
+            }
+
+            0 -> {
+                when (direction) {
+                    "UP" -> {
+                        updateCell("H16", "T", "S")
+                        updateCell("H12", "4", "S")
+                        updateCell("H15", "T", "Rh")
+                    }
+                    "DOWN" -> {
+                        updateCell("H11", "A", "H")
+                        updateCell("H9", "2", "H")
+                    }
+                }
+            }
+
+            1 -> {
+                when (direction) {
+                    "UP" -> {
+                        updateCell("H11", "A", "Dh")
+                        updateCell("H9", "2", "Dh")
+                    }
+                    "DOWN" -> {
+                        updateCell("H12", "3", "H")
+                    }
+                }
+            }
+
+            2 -> {
+                when (direction) {
+                    "UP" -> {
+                        updateCell("H12", "3", "S")
+                    }
+                    "DOWN" -> {
+                        updateCell("H12", "2", "H")
+                        updateCell("H15", "9", "H")
+                    }
+                }
+            }
+
+            3 -> {
+                when (direction) {
+                    "UP" -> {
+                        updateCell("H12", "2", "S")
+                        updateCell("H9", "7", "Dh")
+                        updateCell("H15","9","Rh")
+                    }
+                    "DOWN" -> {
+                        updateCell("H15", "T", "H")
+                        updateCell("T-T", "6", "S")
+                        updateCell("H10", "T", "H")
+                        updateCell("H10", "A", "H")
+                        updateCell("H14", "T", "H")
+                    }
+                }
+            }
+
+            4 -> {
+                when (direction) {
+                    "UP" -> {
+                        updateCell("H15", "T", "S")
+                        updateCell("T-T", "6", "P")
+                        updateCell("H10", "T", "Dh")
+                        updateCell("H10", "A", "Dh")
+                        updateCell("H14", "T", "Rh")
+                    }
+                    "DOWN" -> {
+                        updateCell("H16", "9", "H")
+                        updateCell("T-T", "5", "S")
+                    }
+                }
+            }
+
+            5 -> {
+                when (direction) {
+                    "UP" -> {
+                        updateCell("H16", "9", "S")
+                        updateCell("T-T", "5", "P")
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    private fun updateCell(playerHand: String, dealerUpCard: String, newStrategy: String) {
+        
+    }
 
     // Gets the table coordinates for the desired deviation. After making this, I don't actually
     // think I need it. I think I can just do something like:

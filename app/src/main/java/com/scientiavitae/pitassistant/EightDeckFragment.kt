@@ -210,7 +210,7 @@ class EightDeckFragment : Fragment() {
                 cellTextView.gravity = Gravity.CENTER
                 cellTextView.setTextColor(resources.getColor(R.color.table_background))
             }
-            "P" -> {
+            "SP" -> {
                 cellTextView.setBackgroundColor(resources.getColor(R.color.table_split))
                 cellTextView.gravity = Gravity.CENTER
                 cellTextView.setTextColor(resources.getColor(R.color.table_background))
